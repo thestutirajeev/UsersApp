@@ -1,24 +1,59 @@
-# Users REST API - Spring Boot
+# 🚀 User REST API - Spring Boot
 
-This is a simple **Users REST API** built with **Spring Boot** to demonstrate basic CRUD operations. The API interacts with a MySQL database to manage user data.
+## 🌟 Overview
+This project is a RESTful API for managing users, built using Spring Boot. It provides endpoints to create, retrieve, update, and delete user records.
 
-## 🛠 Tech Stack
-- **Spring Boot** (Spring MVC, Spring Data JPA)
-- **Hibernate**
-- **MySQL**
-- **HikariCP** (Connection Pooling)
-- **Postman** (For API Testing)
+## 🛠️ Tech Stack
+- ⚡ **Spring Boot 3.4.3**
+- 🌍 **Spring Boot Starter Web** (for building REST APIs)
+- 💾 **Spring Boot Starter Data JPA** (for database interaction)
+- 🛢️ **MySQL** (for persistent storage)
+- 🔄 **Spring Boot DevTools** (for development efficiency)
+- ✅ **Spring Boot Starter Test** (for testing)
 
-## 📂 Project Structure
-```
-src/main/java/com/example/demo/
-│── controller/     # Handles API requests
-│── service/        # Business logic layer
-│── repository/     # Data access layer
-│── model/          # User entity definition
-│── config/         # Database and application configuration
-│── DemoApplication # Main Spring Boot application
-```
+## 🎯 Features
+- ➕ Create a new user
+- 📜 Retrieve all users
+- 🔍 Retrieve a specific user by ID
+- ✏️ Update an existing user
+- ❌ Delete a user
+
+## 📌 API Endpoints
+| 🏷️ HTTP Method | 🔗 Endpoint | 📄 Description |
+|------------|----------------|-------------|
+| 📝 POST | `/api/users` | Create a new user |
+| 📥 GET | `/api/users` | Retrieve all users |
+| 🔎 GET | `/api/users/{id}` | Retrieve a user by ID |
+| 🛠️ PUT | `/api/users/{id}` | Update an existing user |
+| 🗑️ DELETE | `/api/users/{id}` | Delete a user |
+
+## ⚙️ Setup and Installation
+### 📌 Prerequisites
+- ☕ Java 22
+- 🏗️ Maven
+- 🛢️ MySQL database
+
+### 🚀 Steps to Run
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-repo/User_Rest_SpringBoot.git
+   cd User_Rest_SpringBoot
+   ```
+2. **Configure MySQL Database:**
+   - Open `application.properties` (or `application.yml` if you use YAML) and configure your database settings:
+     ```properties
+     spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+     spring.datasource.username=your_username
+     spring.datasource.password=your_password
+     spring.jpa.hibernate.ddl-auto=update
+     ```
+3. **Build and Run the Project:**
+   ```sh
+   mvn spring-boot:run
+   ```
+4. **Test the API:**
+   - Use 🛠️ **Postman** to test the API endpoints by sending requests and verifying responses.
+   - Alternatively, use `curl` commands in the terminal.
 
 ## 📌 Prerequisites
 - **Java 17+**
@@ -26,41 +61,19 @@ src/main/java/com/example/demo/
 - **MySQL Server**
 - **Postman** (for testing API)
 
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone the Repository
-```sh
-git clone https://github.com/your-username/users-rest-api.git
-cd users-rest-api
+## 🏗️ Project Structure
+```
+User_Rest_SpringBoot
+│── src/main/java/com/example/demo
+│   ├── controller/UserController.java
+│   ├── model/User.java
+│   ├── repository/UserRepository.java
+│   ├── service/UserService.java
+│   └── DemoApplication.java
+│── src/main/resources/
+│   ├── application.properties
+│── pom.xml
 ```
 
-### 2️⃣ Configure MySQL Database  
-Create a database in MySQL:
-```sql
-CREATE DATABASE usersdb;
-```
-Update `application.properties` (or `application.yml`) in `src/main/resources`:
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/usersdb
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
-```
-
-### 3️⃣ Build and Run the Application
-```sh
-mvn clean install
-mvn spring-boot:run
-```
-
-## 📌 API Endpoints for Postman Testing
-
-| Method | Endpoint        | Description           |
-|--------|----------------|-----------------------|
-| GET    | `/api/users`   | Fetch all users      |
-| GET    | `/api/users/{id}` | Fetch user by ID  |
-| POST   | `/api/users`   | Create a new user    |
-| PUT    | `/api/users/{id}` | Update user by ID |
-| DELETE | `/api/users/{id}` | Delete user by ID |
+## 📜 License
+This project is licensed under the MIT License. 📄
