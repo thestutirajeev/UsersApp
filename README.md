@@ -35,10 +35,6 @@ This project is a RESTful API for managing users, built using Spring Boot. It pr
 
 ### 🚀 Steps to Run
 1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/your-repo/User_Rest_SpringBoot.git
-   cd User_Rest_SpringBoot
-   ```
 2. **Configure MySQL Database:**
    - Open `application.properties` (or `application.yml` if you use YAML) and configure your database settings:
      ```properties
